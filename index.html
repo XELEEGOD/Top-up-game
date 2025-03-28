@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Up Game - Fantasy Edition</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: url('https://wallpaperaccess.com/full/1702493.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            width: 90%;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e68900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Top-Up Game - Fantasy Edition</h1>
+        <label for="game">Pilih Game:</label>
+        <select id="game">
+            <option value="ml">Mobile Legends</option>
+            <option value="ff">Free Fire</option>
+        </select>
+        <label for="id">Masukkan ID Game:</label>
+        <input type="text" id="id" placeholder="Masukkan ID" required>
+        <label for="jumlah">Pilih Jumlah Diamond:</label>
+        <select id="jumlah">
+            <option value="50">50 Diamond</option>
+            <option value="100">100 Diamond</option>
+            <option value="500">500 Diamond</option>
+        </select>
+        <button onclick="checkout()">Bayar via QRIS</button>
+        <p id="diskon"></p>
+    </div>
+    <script>
+        let pelangganTetap = 0.1;
+        function checkout() {
+            let diskon = pelangganTetap;
+            document.getElementById("diskon").innerText = "Diskon Anda: " + diskon + "%";
+            alert("Bayar via QRIS dengan diskon " + diskon + "%");
+        }
+    </script>
+</body>
+</html>
