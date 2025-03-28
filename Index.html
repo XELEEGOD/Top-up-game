@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-Up XELEEGOD Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        select, input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Top-Up Game</h2>
+        <label for="game">Pilih Game:</label>
+        <select id="game">
+            <option value="Free Fire">Free Fire</option>
+            <option value="Mobile Legends">Mobile Legends</option>
+            <option value="PUBG Mobile">PUBG Mobile</option>
+        </select><label for="idGame">Masukkan ID Game:</label>
+    <input type="text" id="idGame" placeholder="Masukkan ID Game" oninput="validateInput()">
+    
+    <label for="diamond">Pilih Jumlah Diamond:</label>
+    <select id="diamond">
+        <option value="100">100 Diamond</option>
+        <option value="200">200 Diamond</option>
+        <option value="500">500 Diamond</option>
+    </select>
+    
+    <label for="payment">Pilih Metode Pembayaran:</label>
+    <select id="payment">
+        <option value="QRIS">QRIS</option>
+        <option value="GoPay">GoPay</option>
+        <option value="Dana">Dana</option>
+        <option value="Transfer Bank">Transfer Bank</option>
+    </select>
+    
+    <button id="payButton" onclick="pay()" disabled>Bayar</button>
+    <p id="discount">Diskon Anda: 0.1%</p>
+</div>
+
+<script>
+    function validateInput() {
+        const idGame = document.getElementById("idGame").value;
+        const payButton = document.getElementById("payButton");
+        payButton.disabled = idGame.trim() === "";
+    }
+    
+    function pay() {
+        alert("Pembayaran berhasil! Terima kasih telah top-up.");
+    }
+</script>
+
+</body>
+</html>
